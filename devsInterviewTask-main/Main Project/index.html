@@ -8,18 +8,15 @@
 <link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-	<p id="question" class="question"> Which is the correct option? </p>
-	<div id="options-wrapper">
-		
-	</div>
+	<p id="question" class="question"> Which is the correct option? </p> <!-- This is the header of the question -->
+	<div id="options-wrapper"> </div> <!-- This represents all the options for the question selected -->
 
-	<button id="evaluate" onclick="myEvaluation()">Evaluate!</button>
-	
-	<pre id="content" style="white-space: pre-wrap;"></pre>
-	<div id="evaluation-message"></div>
+	<button id="evaluate" onclick="myEvaluation()" style="display: none;">Evaluate!</button> <!-- Calling the evaluation after the choise has been selected-->
+	<div id="evaluation-message"></div> <!-- Presenting either if you have failed or successfully completed the question-->
+	<!-- <pre id="content" style="white-space: pre-wrap;"></pre> -->
 
-	<button id="next" onClick="nextQuestion()" style="display:none;">Next random question</button>
-	<button id="restartQuestions" onClick="window.location.reload()" style="display:none;">Start again</button>
+	<button id="next" onClick="nextQuestion()" style="display:none;">Next random question</button> <!-- This appears only when you have selected the answer and put it to evaluation-->
+	<button id="restartQuestions" onClick="window.location.reload()" style="display:none;">Start again</button> <!-- After completing 3 questions, the Restart button will apear to start over-->
 
     <script async src="https://apis.google.com/js/api.js"
     	onload="this.onload=function(){};handleClientLoad()"
