@@ -69,7 +69,7 @@ function startExercise(startIndex){
 	
 	for(let i = 0; i < options.length; i++){
 		states[i] = false; // Putting all states into false, until the user click on some choise where then we will call function toggleChoise which will change the value of states for that clicked option into true
-		optionsContainer.innerHTML += "<div class ='unchosen option' id='unchosen"+i+"' onclick='toggleChoice("+i+")'><p class='text'>" + options[i]+"</p></div>"; //Depending on how many options there are we are going to cerate as much new elements with options of when clicking on them to call function toggleChoise with the index of that choice
+		optionsContainer.innerHTML += "<div class ='unchosen"+i+"' id='unchosen"+i+"' onclick='toggleChoice("+i+")'><p class='text'>" + options[i]+"</p></div>"; //Depending on how many options there are we are going to cerate as much new elements with options of when clicking on them to call function toggleChoise with the index of that choice
 	}
 	document.getElementById("evaluate").style.display = "none"; // Not showing the evaluate button so the user cannot press it until selecting one of the answers.
 }
@@ -82,12 +82,14 @@ function myEvaluation(){ //This functionis used to evaluate either if the answer
 			correctAnswer += 1;
 			currentScore += parseInt(correct_answer_score,10);
 			evMessage.innerHTML = '<p>Awesome! The answer is correct!</p>'; //Noting the user that the answer is correct
+			document.getElementById("evaluation-message").style.color = "green";
 			afterEvaluation();
 			return;
 		}
 	}
 	//If the answer is not true, we are going to just skip to the next question without sumarizing the score
 	evMessage.innerHTML = '<p>Not correct, continue to next question</p>';
+	document.getElementById("evaluation-message").style.color = "red";
 	afterEvaluation();
 }
 
@@ -103,9 +105,11 @@ function randomNumbers(maxNumber, dataLenght) { //Just choosing the unique rando
 function toggleChoice(index){ //Function for when clicking on the choise, to put the state into true and revealing the evaluate button.
 	for(let i=0; i<options.length; i++){
 			states[i] = false;
+			document.getElementById("unchosen"+i).style.borderColor = "gray";
 		}
 	states[index] = true;
 	document.getElementById("evaluate").style.display = "inline";
+	document.getElementById("unchosen"+index).style.borderColor = "blue";
 }
 
 function nextQuestion(){ //Function that changes the questions

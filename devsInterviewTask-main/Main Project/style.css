@@ -1,10 +1,55 @@
-.question{
-	font-weight: bold;
+.evulpoHeader{
+	margin: auto;
+	width: 100%;
 }
-.unchosen{
+
+.headerImage{
+	position: relative;
+	left:50%;
+	margin-left: -224px
+}
+
+.questionWrapper{
+	position: relative;
+	background-color: #5E64C4;
+	width: 1024px;
+	left: 50%;
+	margin-left:-512px;
+	text-align: center;
+	height: 50px;
+	border-radius: 10px;
+	line-height: 50px;
+}
+.question{
+	font-family: Arial;
+	color: white;
+	font-weight: bold;
+	font-size: 14pt;
+}
+.options-wrapper{
+	top:20px;
+	border-radius: 25px;
+	border: 3px solid lightgray;
+	position: relative;
+	width: 800px;
+	left:50%;
+	margin-left: -400px;
+	background-color: #ECEDFE;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+div[class^="unchosen"]{
 	transition: all 0.15s;
 	border-style: solid ;
 	border-width: 2px;
+	border-color: gray; 
+	height: auto;
+	margin: 0 auto;
+	padding:px;
+	top:10px;
+	width: 300px;
+	border-radius: 25px;
+	margin-top:5px;
 }
 .chosen{
 	transition: all 0.15s;
@@ -15,15 +60,57 @@
 .option{
 	width: 100px;
 	height: 50px;
-	 border-radius: 25px;
-	 padding-left:auto;
-	 padding-right:auto;
-	 margin-top:2px;
+	border-radius: 25px;
+	padding-left:auto;
+	padding-right:auto;
+	margin-top:2px;
 }
 .text{
+	font-family: Arial;
 	font-weight: bold;
 	font-size:16px;
-	color:#0000ff;
+	color: darkorchid;
 	text-align: center;
+}
 
+.evaluate, .next, .restartQuestions{
+	position: relative;
+	top:50px;
+	margin: 0;
+	width: 400px;
+	left:50%;
+	margin-left: -200px;
+  	display: inline-block;
+  	padding: .75rem 1.25rem;
+  	border-radius: 10rem;
+  	color: #5E64C4;
+  	text-transform: uppercase;
+  	font-size: 1rem;
+	letter-spacing: .15rem;
+	transition: all .3s;
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+}
+.evaluate:hover , .next:hover {
+	filter: brightness(85%);
+}
+
+.restartQuestions:hover {
+	filter: brightness(85%);
+	color : purple;
+}
+
+.evaluation-message{
+	top:30px;
+	bottom: -20px;
+	position: relative;
+	width: 500px;
+	left: 50%;
+	margin-left: -250px;
+	font-family: Arial;
+	font-weight: bold;
+	font-size:16px;
+	color: black;
+	text-align: center;
 }
