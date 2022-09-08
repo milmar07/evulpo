@@ -14,12 +14,12 @@
 	</div>
 
 	<button id="evaluate" onclick="myEvaluation()">Evaluate!</button>
-	<button id='Start' onclick="initClient()"> Start </button>
-	<button id='getData' onclick="getExerciseData()"> Get Data </button>
+	
 	<pre id="content" style="white-space: pre-wrap;"></pre>
 	<div id="evaluation-message"></div>
 
-	<button id="next" onClick="window.location.reload();" style="display:none;">Next random question</button>
+	<button id="next" onClick="nextQuestion()" style="display:none;">Next random question</button>
+	<button id="restartQuestions" onClick="window.location.reload()" style="display:none;">Start again</button>
 
     <script async src="https://apis.google.com/js/api.js"
     	onload="this.onload=function(){};handleClientLoad()"
